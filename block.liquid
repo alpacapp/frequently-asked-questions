@@ -1,0 +1,20 @@
+<div class="wrapper" alpacapp-element="wrapper" data-style="{{ iconStyle }}">
+  {% for i in (1..15) %}
+    {% assign question = "question" | append: i | get %}
+    {% assign answer = "answer" | append: i | get %}
+    {% unless question %}{% continue %}{% endunless %}
+    {% assign isOpen = false %}
+    {% if i==1 and openFirst %}
+      {% assign isOpen = true %}
+    {% endif %}
+    <div class="entry" alpacapp-element="entry{{ ' entry-open' | if: isOpen }}" {{ 'data-open' | if: isOpen }}>
+      <div class="question" alpacapp-element="question{{ ' question-open' | if: isOpen }}">
+        <span alpacapp-editable="question{{ i }}">{{ question | singlelineText }}</span>
+        <em alpacapp-element="icon"></em>
+      </div>
+      <div class="answer" alpacapp-element="answer">
+        <div alpacapp-editable="answer{{ i }}" alpacapp-richText>{{ answer | richText }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

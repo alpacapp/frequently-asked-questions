@@ -1,0 +1,11 @@
+{
+    "name": "Frequently Asked Questions",
+    "handle": "frequently-asked-questions",
+    "author": "alpacapp",
+    "category": "media",
+    "description": "Display Frequently Asked Questions (FAQ) as an accordion.",
+    "entry": "block.liquid",
+    "stylesheet": "style.css",
+    "script": "script.js",
+    "icon": "quiz"
+}
